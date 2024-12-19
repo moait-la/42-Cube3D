@@ -29,11 +29,6 @@ typedef struct s_point
     float	y;
 }	t_point;
 
-typedef struct s_player
-{
-    t_point	*position;
-} 	t_player;
-
 typedef struct s_movment
 {
     bool	moveFront;
@@ -43,6 +38,15 @@ typedef struct s_movment
     bool	rotateRight;
     bool	rotateLeft;
 } t_movment;
+
+typedef struct s_player
+{
+    float       degree;
+    int         speed;
+    t_point     *position;
+    t_movment   *movment;
+} 	t_player;
+
 
 typedef struct s_direction
 {
@@ -71,6 +75,7 @@ typedef struct s_cube
     t_map       *map;
 	t_texture   *texture;
     t_player    *player;
+    long        lastFameUpdate;
 }	t_cube;
 
 #endif

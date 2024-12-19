@@ -16,7 +16,7 @@ EXEC = cube
 all: $(EXEC)
 
 $(EXEC): $(OBJ) $(HEADERS)
-	$(CC) $(CFLAGS) $(OBJ) $(MACOS) $(GLFW) $(MLX42) $(LIBFT) -o $@ 
+	$(CC) $() $(OBJ) $(MACOS) $(GLFW) $(MLX42) $(LIBFT) -o $@ 
 
 clean:
 	rm -rf $(OBJ) $(EXEC)

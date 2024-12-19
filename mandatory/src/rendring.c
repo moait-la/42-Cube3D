@@ -53,9 +53,8 @@ void	renderPlayer(t_cube *cube)
 
 void	castRay(t_cube *cube)
 {
-	int degree = 0;
-	int endX = cube->player->position->x + 20 * cos(degree * (PI/180));
-	int endY = cube->player->position->y + 20 * sin(degree * (PI/180));
+	int endX = cube->player->position->x + 20 * cos(cube->player->degree * (PI/180));
+	int endY = cube->player->position->y + 20 * sin(cube->player->degree * (PI/180));
 
 	float deltaX = endX - cube->player->position->x;
 	float deltaY = endY - cube->player->position->y;

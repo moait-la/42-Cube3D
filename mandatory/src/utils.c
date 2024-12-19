@@ -4,7 +4,8 @@ void	initStartingValues(t_cube *cube)
 {
 	cube->player->position->x = WIDTH/2;
 	cube->player->position->y = HEIGHT/2;
-	
+	cube->player->degree = 0;
+	cube->player->speed = 5;
 }
 
 void	*ft_malloc(unsigned long size)
