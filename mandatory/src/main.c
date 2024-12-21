@@ -23,12 +23,13 @@ int main()
 	if (!cube.img)
 		ft_error("Error Allocating Img Buffer\n");
 
+	allocations(&cube);
 	getMap(&cube);
 
 
 	initStartingValues(&cube);
 
-	cube.lastFameUpdate = 0;
+
 	updatePosition(&cube);
 	render(&cube);
 

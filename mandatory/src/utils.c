@@ -28,4 +28,5 @@ void	allocations(t_cube *cube)
 	cube->player = (t_player *)ft_malloc(sizeof(t_player));
 	cube->player->position = (t_point *)ft_malloc(sizeof(t_point));
 	cube->player->movment = (t_movment *)ft_malloc(sizeof(t_movment));
+	cube->ray = (t_ray *)ft_malloc(sizeof(t_ray) * WIDTH);
 }

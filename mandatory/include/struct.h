@@ -59,21 +59,24 @@ typedef struct s_direction
 typedef enum s_hit
 {
     VERTICAL,
-    HORIZONTAL
+    HORIZONTAL,
+    UNKNOWN
 }   t_hit;
 
 typedef struct s_ray
 {
     float   distance;
-    float   ray_angle;
+    float   rayAngle;
+
     float   xInter; // Intersaction
     float   yInter;
+
     bool	hitHori;
     bool	hitVert;
-    float   rayAngle;
+
     t_hit   closestHit;
-    t_point	*horizHit;
-    t_point	*vertiHit;
+    t_point	*horizHitP;
+    t_point	*vertiHitP;
 }   t_ray;
 
 

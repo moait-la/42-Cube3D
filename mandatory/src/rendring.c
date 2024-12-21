@@ -78,3 +78,30 @@ void	castRay(t_cube *cube)
 		tmpy += yInc;
 	}
 }
+
+float normalize(float angle)
+{
+    angle = fmod(angle, 2 * PI); // Use modulo for floating-point
+    if (angle < 0)
+        angle = angle + (2 * PI); // Ensure angle is in [0, 2PI]
+    return angle;
+}
+
+void	castAllRays(t_cube *cube)
+{
+	float	firstRayAngle;
+	float	angleInc;
+	int		colom;
+
+	while (++colom < WIDTH)
+	{
+		cube->ray[colom].hitHori = false;
+		cube->ray[colom].hitVert = false;
+		cube->ray[colom].closestHit = UNKNOWN;
+		cube->ray[colom].rayAngle = UNKNOWN;
+		cube->ray[colom].horizHitP = (t_point *)ft_malloc(sizeof(t_point));
+		cube->ray[colom].vertiHitP = (t_point *)ft_malloc(sizeof(t_point));
+		
+	}
+	
+}
