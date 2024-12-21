@@ -9,6 +9,7 @@ void	render(void	*param)
 	renderMapGrid(cube);
 	renderPlayer(cube);
 	castRay(cube);
+	castAllRays(cube);
 }
 
 int main()

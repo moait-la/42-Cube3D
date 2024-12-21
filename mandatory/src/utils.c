@@ -30,3 +30,10 @@ void	allocations(t_cube *cube)
 	cube->player->movment = (t_movment *)ft_malloc(sizeof(t_movment));
 	cube->ray = (t_ray *)ft_malloc(sizeof(t_ray) * WIDTH);
 }
+
+void	myPixelPut(t_cube *cube, int x, int y, int color)
+{
+	if (x > WIDTH || x < 0 || y > HEIGHT || y < 0)
+		return ;
+	mlx_put_pixel(cube->img, x, y, color);
+}

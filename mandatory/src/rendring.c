@@ -73,7 +73,7 @@ void	castRay(t_cube *cube)
 	int i = -1;
 	while (++i < steps)
 	{
-		mlx_put_pixel(cube->img, tmpx, tmpy, 0xFF0000);
+		myPixelPut(cube, tmpx, tmpy, 0xFF0000);
 		tmpx += xInc;
 		tmpy += yInc;
 	}
@@ -87,21 +87,32 @@ float normalize(float angle)
     return angle;
 }
 
+void	getVerticalInter()
+{
+	
+}
+
 void	castAllRays(t_cube *cube)
 {
 	float	firstRayAngle;
 	float	angleInc;
 	int		colom;
 
+	firstRayAngle = (cube->player->degree - FOV/2) * (PI / 180);
+	firstRayAngle = normalize(firstRayAngle);
+	angleInc = (FOV * PI/180) / (float)WIDTH;
+	colom = -1;
 	while (++colom < WIDTH)
 	{
 		cube->ray[colom].hitHori = false;
 		cube->ray[colom].hitVert = false;
 		cube->ray[colom].closestHit = UNKNOWN;
-		cube->ray[colom].rayAngle = UNKNOWN;
+		cube->ray[colom].rayAngle = firstRayAngle;
 		cube->ray[colom].horizHitP = (t_point *)ft_malloc(sizeof(t_point));
 		cube->ray[colom].vertiHitP = (t_point *)ft_malloc(sizeof(t_point));
-		
+		getVerticalInter(cube, colom);
+		printf("%f\n", cube->ray[colom].rayAngle);
+		firstRayAngle += angleInc;
 	}
-	
+	exit(0);
 }
