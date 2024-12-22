@@ -7,6 +7,7 @@
 #include "../../libft/libft.h"
 #include <stdbool.h>
 #include <math.h>
+#include <sys/time.h>
 
 void	renderMapGrid(t_cube *cube);
 void	ft_error(char *errorMsj);
@@ -17,5 +18,13 @@ void	allocations(t_cube *cube);
 void	getMap(t_cube *cube);
 void	renderPlayer(t_cube *cube);
 void	castRay(t_cube *cube);
+long    getTime();
+
+void	keyPress(mlx_key_data_t keydata, void *param);
+
+void	moveForward(t_cube *cube);
+void	moveBack(t_cube *cube);
+void	updatePosition(t_cube *cube);
+
 
 #endif

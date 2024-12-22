@@ -31,7 +31,7 @@ typedef struct s_point
 
 typedef struct s_movment
 {
-    bool	moveFront;
+    bool	moveForward;
     bool	moveBack;
     bool	moveRight;
     bool	moveLeft;
@@ -56,17 +56,26 @@ typedef struct s_direction
     bool	facingLeft;
 }	t_direction;
 
+typedef enum s_hit
+{
+    VERTICAL,
+    HORIZONTAL
+}   t_hit;
+
 typedef struct s_ray
 {
     float   distance;
     float   ray_angle;
     float   xInter; // Intersaction
     float   yInter;
-    bool	hitHoriz;
-    bool	hitVerti;
+    bool	hitHori;
+    bool	hitVert;
+    float   rayAngle;
+    t_hit   closestHit;
     t_point	*horizHit;
     t_point	*vertiHit;
 }   t_ray;
+
 
 typedef struct s_cube
 {
@@ -75,6 +84,7 @@ typedef struct s_cube
     t_map       *map;
 	t_texture   *texture;
     t_player    *player;
+    t_ray       *ray;
     long        lastFameUpdate;
 }	t_cube;
 
