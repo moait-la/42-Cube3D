@@ -7,8 +7,8 @@
 # define NUM_ROWS  16
 
 // Screen Dimenstions
-# define WIDTH  1000
-# define HEIGHT  1000
+# define WIDTH  100
+# define HEIGHT  100
 
 // Math values
 # define PI 3.14159265359
