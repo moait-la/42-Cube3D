@@ -20,5 +20,5 @@ $(EXEC): $(OBJ) $(HEADERS)
 clean:
 	rm -rf $(OBJ)
 
-fclean: $(clean)
-	rm -rf $(EXEC)
+# fclean: $(clean)
+# 	rm -rf $(EXEC)
