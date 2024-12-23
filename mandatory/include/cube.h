@@ -3,12 +3,13 @@
 
 #include "macros.h"
 #include "struct.h"
-#include "/Users/moait-la/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/moait-la/my_libraries/MLX42/include/MLX42.h"
 #include "../../libft/libft.h"
-#include <stdbool.h>
 #include <math.h>
 #include <sys/time.h>
 #include <stdio.h>
+#include <stdbool.h>
+
 
 void	ft_error(char *errorMsj);
 void	*ft_malloc(unsigned long size);

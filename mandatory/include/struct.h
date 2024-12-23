@@ -2,10 +2,7 @@
 #define STRUCT_H
 
 #include "./cube.h"
-#include "macros.h"
-#include "struct.h"
-#include "/Users/moait-la/Desktop/MLX42/include/MLX42/MLX42.h"
-#include "../../libft/libft.h"
+#include "/Users/moait-la/my_libraries/MLX42/include/MLX42.h"
 #include <stdbool.h>
 
 typedef struct s_texture
