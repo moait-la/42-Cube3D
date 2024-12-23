@@ -11,9 +11,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include <stdbool.h>
-
-
 void	ft_error(char *errorMsj);
 void	*ft_malloc(unsigned long size);
 void	myPixelPut(t_cube *cube, int x, int y, int color);

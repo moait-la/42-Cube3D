@@ -71,9 +71,10 @@ typedef struct s_ray
     bool	hitHori;
     bool	hitVert;
 
-    t_hit   closestHit;
-    t_point	*horizHitP;
-    t_point	*vertiHitP;
+    t_hit       closestHit;
+    t_point	    *horizHitP;
+    t_point	    *vertiHitP;
+    t_direction *direction;
 }   t_ray;
 
 

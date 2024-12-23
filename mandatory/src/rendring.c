@@ -110,7 +110,8 @@ void	castAllRays(t_cube *cube)
 		cube->ray[colom].rayAngle = firstRayAngle;
 		cube->ray[colom].horizHitP = (t_point *)ft_malloc(sizeof(t_point));
 		cube->ray[colom].vertiHitP = (t_point *)ft_malloc(sizeof(t_point));
-		// getVerticalInter(cube, colom);
+		cube->ray[colom].direction = (t_direction *)ft_malloc(sizeof(t_direction));
+		getVerticalInter(cube, colom);
 		printf("%f\n", cube->ray[colom].rayAngle);
 		firstRayAngle += angleInc;
 	}
