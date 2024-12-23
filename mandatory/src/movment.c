@@ -46,11 +46,7 @@ void	updatePosition(t_cube *cube)
 {
 	// if (getTime() - cube->lastFameUpdate < 16.67 && cube->lastFameUpdate != 0)
 	// 	return ;
-<<<<<<< HEAD
-	if (cube->player->movment->moveFront == true)
-=======
 	if (cube->player->movment->moveForward == true)
->>>>>>> 754f8609c00c0dfb252eb74cde0b4691fef0eba0
 		moveForward(cube);
 	else if (cube->player->movment->moveBack == true)
 		moveBack(cube);

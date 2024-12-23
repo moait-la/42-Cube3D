@@ -56,12 +56,8 @@ typedef struct s_direction
 typedef enum s_hit
 {
     VERTICAL,
-<<<<<<< HEAD
-    HORIZONTAL
-=======
     HORIZONTAL,
     UNKNOWN
->>>>>>> 754f8609c00c0dfb252eb74cde0b4691fef0eba0
 }   t_hit;
 
 typedef struct s_ray
@@ -71,14 +67,6 @@ typedef struct s_ray
 
     float   xInter; // Intersaction
     float   yInter;
-<<<<<<< HEAD
-    bool	hitHori;
-    bool	hitVert;
-    float   rayAngle;
-    t_hit   closestHit;
-    t_point	*horizHit;
-    t_point	*vertiHit;
-=======
 
     bool	hitHori;
     bool	hitVert;
@@ -86,7 +74,6 @@ typedef struct s_ray
     t_hit   closestHit;
     t_point	*horizHitP;
     t_point	*vertiHitP;
->>>>>>> 754f8609c00c0dfb252eb74cde0b4691fef0eba0
 }   t_ray;
 
 
