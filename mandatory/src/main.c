@@ -26,16 +26,12 @@ int main()
 
 	allocations(&cube);
 	getMap(&cube);
-
-
 	initStartingValues(&cube);
-
 
 	updatePosition(&cube);
 	render(&cube);
 
 	mlx_key_hook(cube.window, keyPress, &cube);	
-
 	mlx_image_to_window(cube.window, cube.img, 0, 0);
 	mlx_loop_hook(cube.window, render, &cube);
 	mlx_loop(cube.window);
