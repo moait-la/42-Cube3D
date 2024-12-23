@@ -1,6 +1,8 @@
 {
     "files.associations": {
-        "cube.h": "c"
+        "cube.h": "c",
+        "stdbool.h": "c",
+        "__node_handle": "c"
     },
     "workbench.colorCustomizations": {
         "terminal.background": "#00000000",
