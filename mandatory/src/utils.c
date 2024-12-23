@@ -37,3 +37,15 @@ void	myPixelPut(t_cube *cube, int x, int y, int color)
 		return ;
 	mlx_put_pixel(cube->img, x, y, color);
 }
+
+void	getSquareFactor(t_cube *cube)
+{
+	int	scaleX;
+	int	scaleY;
+
+	scaleX = WIDTH/NUM_COLOM;
+	scaleY = HEIGHT/NUM_ROWS;
+
+	cube->map->sqaureFactorX = scaleX;
+	cube->map->sqaureFactorY = scaleY;
+}

@@ -2,10 +2,7 @@
 #define STRUCT_H
 
 #include "./cube.h"
-#include "macros.h"
-#include "struct.h"
-#include "/Users/moait-la/Desktop/MLX42/include/MLX42/MLX42.h"
-#include "../../libft/libft.h"
+#include "/Users/moait-la/my_libraries/MLX42/include/MLX42.h"
 #include <stdbool.h>
 
 typedef struct s_texture
@@ -59,12 +56,8 @@ typedef struct s_direction
 typedef enum s_hit
 {
     VERTICAL,
-<<<<<<< HEAD
-    HORIZONTAL
-=======
     HORIZONTAL,
     UNKNOWN
->>>>>>> 754f8609c00c0dfb252eb74cde0b4691fef0eba0
 }   t_hit;
 
 typedef struct s_ray
@@ -74,14 +67,6 @@ typedef struct s_ray
 
     float   xInter; // Intersaction
     float   yInter;
-<<<<<<< HEAD
-    bool	hitHori;
-    bool	hitVert;
-    float   rayAngle;
-    t_hit   closestHit;
-    t_point	*horizHit;
-    t_point	*vertiHit;
-=======
 
     bool	hitHori;
     bool	hitVert;
@@ -89,7 +74,6 @@ typedef struct s_ray
     t_hit   closestHit;
     t_point	*horizHitP;
     t_point	*vertiHitP;
->>>>>>> 754f8609c00c0dfb252eb74cde0b4691fef0eba0
 }   t_ray;
 
 

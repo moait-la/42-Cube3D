@@ -87,10 +87,10 @@ float normalize(float angle)
     return angle;
 }
 
-void	getVerticalInter()
-{
-	
-}
+// void	getVerticalInter(t_cube *cintr)
+// {
+
+// }
 
 void	castAllRays(t_cube *cube)
 {
@@ -110,9 +110,8 @@ void	castAllRays(t_cube *cube)
 		cube->ray[colom].rayAngle = firstRayAngle;
 		cube->ray[colom].horizHitP = (t_point *)ft_malloc(sizeof(t_point));
 		cube->ray[colom].vertiHitP = (t_point *)ft_malloc(sizeof(t_point));
-		getVerticalInter(cube, colom);
+		// getVerticalInter(cube, colom);
 		printf("%f\n", cube->ray[colom].rayAngle);
 		firstRayAngle += angleInc;
 	}
-	exit(0);
 }

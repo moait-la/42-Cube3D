@@ -3,15 +3,13 @@
 
 #include "macros.h"
 #include "struct.h"
-#include "/Users/moait-la/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/moait-la/my_libraries/MLX42/include/MLX42.h"
 #include "../../libft/libft.h"
-#include <stdbool.h>
 #include <math.h>
 #include <sys/time.h>
-<<<<<<< HEAD
-=======
 #include <stdio.h>
->>>>>>> 754f8609c00c0dfb252eb74cde0b4691fef0eba0
+#include <stdbool.h>
+
 
 void	ft_error(char *errorMsj);
 void	*ft_malloc(unsigned long size);
@@ -27,23 +25,12 @@ void	castAllRays(t_cube *cube);
 void	getMap(t_cube *cube);
 void	renderMapGrid(t_cube *cube);
 void	renderPlayer(t_cube *cube);
-<<<<<<< HEAD
-void	castRay(t_cube *cube);
-long    getTime();
-
-void	keyPress(mlx_key_data_t keydata, void *param);
-
-=======
 
 int     wallCheck(t_cube *cube, int	newX, int newY);
->>>>>>> 754f8609c00c0dfb252eb74cde0b4691fef0eba0
 void	moveForward(t_cube *cube);
 void	moveBack(t_cube *cube);
 void	updatePosition(t_cube *cube);
 
-<<<<<<< HEAD
-=======
 void	keyPress(mlx_key_data_t keydata, void *param);
->>>>>>> 754f8609c00c0dfb252eb74cde0b4691fef0eba0
 
 #endif
