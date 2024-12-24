@@ -19,12 +19,12 @@ void	moveForward(t_cube *cube)
 	float	newY;
 
 	degreeRad = cube->player->degree * (PI/180);
-	newX = cube->player->position->x + (cos(degreeRad) * cube->player->speed);
-	newY = cube->player->position->y + (sin(degreeRad) * cube->player->speed);
+	newX = cube->player->x + (cos(degreeRad) * cube->player->speed);
+	newY = cube->player->y + (sin(degreeRad) * cube->player->speed);
 	if (!wallCheck(cube, newX, newY))
 		return ;
-	cube->player->position->x = newX;
-	cube->player->position->y = newY;
+	cube->player->x = newX;
+	cube->player->y = newY;
 }
 
 void	moveBack(t_cube *cube)
@@ -34,25 +34,22 @@ void	moveBack(t_cube *cube)
 	float	newY;
 
 	degreeRad = cube->player->degree * (PI/180);
-	newX = cube->player->position->x - (cos(degreeRad) * cube->player->speed);
-	newY = cube->player->position->y - (sin(degreeRad) * cube->player->speed);
+	newX = cube->player->x - (cos(degreeRad) * cube->player->speed);
+	newY = cube->player->y - (sin(degreeRad) * cube->player->speed);
 	if (!wallCheck(cube, newX, newY))
 		return ;
-	cube->player->position->x = newX;
-	cube->player->position->y = newY;
+	cube->player->x = newX;
+	cube->player->y = newY;
 }
 
 void	updatePosition(t_cube *cube)
 {
-	// if (getTime() - cube->lastFameUpdate < 16.67 && cube->lastFameUpdate != 0)
-	// 	return ;
-	if (cube->player->movment->moveForward == true)
+	if (cube->player->moveForward == true)
 		moveForward(cube);
-	else if (cube->player->movment->moveBack == true)
+	else if (cube->player->moveBack == true)
 		moveBack(cube);
-	if (cube->player->movment->rotateRight == true)
-		cube->player->degree += 5;
-	else if (cube->player->movment->rotateLeft == true)
-		cube->player->degree -= 5;
-	// cube->lastFameUpdate = getTime();
+	if (cube->player->rotateRight == true)
+		cube->player->degree += 3;
+	else if (cube->player->rotateLeft == true)
+		cube->player->degree -= 3;
 }

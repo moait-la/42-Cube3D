@@ -9,7 +9,7 @@ void	render(void	*param)
 	renderMapGrid(cube);
 	renderPlayer(cube);
 	castRay(cube);
-	castAllRays(cube);
+	// castAllRays(cube);
 }
 
 int main()
@@ -20,7 +20,7 @@ int main()
 	if (!cube.window)
 		ft_error("Error Creating Window\n");
 
-	cube.img = mlx_new_image(cube.window, (uint32_t)WIDTH, (uint32_t)HEIGHT);
+	cube.img = mlx_new_image(cube.window, WIDTH, HEIGHT);
 	if (!cube.img)
 		ft_error("Error Allocating Img Buffer\n");
 

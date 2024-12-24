@@ -6,21 +6,21 @@ void	keyPress(mlx_key_data_t keydata, void *param)
 
 	cube = (t_cube *)param;
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_PRESS)
-		((t_cube *)(param))->player->movment->moveForward = true;
+		((t_cube *)(param))->player->moveForward = true;
 	else if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_PRESS)
-		((t_cube *)(param))->player->movment->moveBack = true;
+		((t_cube *)(param))->player->moveBack = true;
 	else if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)
-		((t_cube *)(param))->player->movment->rotateRight = true;
+		((t_cube *)(param))->player->rotateRight = true;
 	else if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_PRESS)
-		((t_cube *)(param))->player->movment->rotateLeft = true;
+		((t_cube *)(param))->player->rotateLeft = true;
 	else if (keydata.key == MLX_KEY_UP && keydata.action == MLX_RELEASE)
-		((t_cube *)(param))->player->movment->moveForward = false;
+		((t_cube *)(param))->player->moveForward = false;
 	else if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_RELEASE)
-		((t_cube *)(param))->player->movment->moveBack = false;
+		((t_cube *)(param))->player->moveBack = false;
 	else if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_RELEASE)
-		((t_cube *)(param))->player->movment->rotateRight = false;
+		((t_cube *)(param))->player->rotateRight = false;
 	else if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_RELEASE)
-		((t_cube *)(param))->player->movment->rotateLeft = false;
+		((t_cube *)(param))->player->rotateLeft = false;
 }
 
 

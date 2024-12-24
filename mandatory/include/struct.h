@@ -26,32 +26,18 @@ typedef struct s_point
     float	y;
 }	t_point;
 
-typedef struct s_movment
-{
-    bool	moveForward;
-    bool	moveBack;
-    bool	moveRight;
-    bool	moveLeft;
-    bool	rotateRight;
-    bool	rotateLeft;
-} t_movment;
-
 typedef struct s_player
 {
     float       degree;
+    float       x;
+    float       y;
     int         speed;
-    t_point     *position;
-    t_movment   *movment;
+
+    bool	moveForward;
+    bool	moveBack;
+    bool	rotateRight;
+    bool	rotateLeft;
 } 	t_player;
-
-
-typedef struct s_direction
-{
-    bool	facingUp;
-    bool	facingDown;
-    bool	facingRight;
-    bool	facingLeft;
-}	t_direction;
 
 typedef enum s_hit
 {
@@ -64,19 +50,19 @@ typedef struct s_ray
 {
     float   distance;
     float   rayAngle;
-
     float   xInter; // Intersaction
     float   yInter;
-
     bool	hitHori;
     bool	hitVert;
 
-    t_hit       closestHit;
-    t_point	    *horizHitP;
-    t_point	    *vertiHitP;
-    t_direction *direction;
+    bool	facingUp;
+    bool	facingDown;
+    bool	facingRight;
+    bool	facingLeft;
+    t_hit   closestHit;
+    t_point	*horizHitP;
+    t_point	*vertiHitP;
 }   t_ray;
-
 
 typedef struct s_cube
 {
