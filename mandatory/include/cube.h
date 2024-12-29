@@ -3,14 +3,18 @@
 
 #include "macros.h"
 #include "struct.h"
-#include "/Users/moait-la/my_libraries/MLX42/include/MLX42.h"
-#include "/Users/moait-la/my_libraries/MLX42/include/MLX42.h"
+#include "../../MLX42/include/MLX42/MLX42.h"
+#include "../../MLX42/include/MLX42/MLX42.h"
 #include "../../libft/libft.h"
 #include <math.h>
 #include <sys/time.h>
 #include <stdio.h>
 #include <stdbool.h>
 
+//PARS
+
+
+//RAYS
 void	ft_error(char *errorMsj);
 void	*ft_malloc(unsigned long size);
 void	myPixelPut(t_cube *cube, int x, int y, int color);

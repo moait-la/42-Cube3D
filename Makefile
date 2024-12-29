@@ -1,22 +1,41 @@
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra 
+NAME = cub3D
 
-MLX42 = -L$(HOME)/my_libraries/MLX42/lib -lmlx42
-GLFW  = -L$(HOME)/.brew/Cellar/glfw/3.4/lib -lglfw
+CC = cc
+
+CFLAGS = -Wall -Werror -Wextra -0fast
+# -fsanitize=address
+
+MLX_FLAGS := -lglfw -framework Cocoa -framework OpenGL -framework IOKit
+
+MLX = MLX42/build/libmlx.a
+
+I = -I /Users/${USER}/.brew/Cellar/glfw/3.4/include/GLFW
+L = -L /Users/${USER}/.brew/Cellar/glfw/3.4/lib
 
 LIBFT = ./libft/libft.a
 
-SRC = $(shell find ./mandatory/src -name '*.c')
+SRC = 
+
+# SRC = $(shell find ./mandatory/src -name '*.c')
+
 HEADERS = $(shell find ./mandatory/include/ -name '*.h')
 
 OBJ = $(SRC:.c=.o)
-EXEC = cube
 
-all: $(EXEC)
+all: $(NAME)
 
-$(EXEC): $(OBJ) $(HEADERS)
-	$(CC) $(CFLAGS) $(OBJ) $(GLFW) $(MLX42) $(LIBFT) -o $@ 
+$(NAME): $(OBJ) $(HEADERS)
+	$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJ) $(MLX) $(I) $(L) $(LIBFT) -o $@ 
+
+%.o : %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@ -I ./manda
 
 clean:
 	rm -rf $(OBJ)
 
+fclean: clean
+	rm -rf $(NAME)
+
+re : fclean all 
+
+.PHONY: clean

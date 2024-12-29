@@ -2,7 +2,8 @@
 #define STRUCT_H
 
 #include "./cube.h"
-#include "/Users/moait-la/my_libraries/MLX42/include/MLX42.h"
+#include "../../MLX42/include/MLX42/MLX42.h"
+// #include "/Users/zqouri/Desktop/42-Cube3D/MLX42/include/MLX42/MLX42.h"
 #include <stdbool.h>
 
 typedef struct s_texture
@@ -74,5 +75,17 @@ typedef struct s_cube
     t_ray       *ray;
     long        lastFameUpdate;
 }	t_cube;
+
+//MAPS
+typedef struct s_map
+{
+	int		fd;
+	int		h_map;
+	int		w_map;
+	char	*name_map;
+	char	*line;
+	char	**map;
+
+}	t_map;
 
 #endif
