@@ -2,7 +2,7 @@ NAME = cub3D
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -0fast
+CFLAGS = -Wall -Werror -Wextra
 # -fsanitize=address
 
 MLX_FLAGS := -lglfw -framework Cocoa -framework OpenGL -framework IOKit
@@ -14,9 +14,11 @@ L = -L /Users/${USER}/.brew/Cellar/glfw/3.4/lib
 
 LIBFT = ./libft/libft.a
 
-SRC = 
+# SRC = 
 
-# SRC = $(shell find ./mandatory/src -name '*.c')
+SRC =	$(shell find ./mandatory/src -name '*.c') \
+		$(shell find ./mandatory/gnl -name '*.c') \
+		$(shell find ./mandatory/parsing -name '*.c') \
 
 HEADERS = $(shell find ./mandatory/include/ -name '*.h')
 

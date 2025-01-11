@@ -8,5 +8,6 @@
         "terminal.background": "#00000000",
         "minimap.background": "#00000000",
         "scrollbar.shadow": "#00000000"
-    }
+    },
+    "cmake.sourceDirectory": "/Users/zqouri/Desktop/42-Cube3D/MLX42"
 }
