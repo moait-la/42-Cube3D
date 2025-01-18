@@ -1,4 +1,4 @@
-NAME = cub3D
+NAME = cub3d
 
 CC = cc
 
@@ -14,7 +14,6 @@ L = -L /Users/${USER}/.brew/Cellar/glfw/3.4/lib
 
 LIBFT = ./libft/libft.a
 
-# SRC = 
 
 SRC =	$(shell find ./mandatory/src -name '*.c') \
 		$(shell find ./mandatory/gnl -name '*.c') \

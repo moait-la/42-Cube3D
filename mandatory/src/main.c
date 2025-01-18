@@ -6,7 +6,7 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 04:06:21 by zqouri            #+#    #+#             */
-/*   Updated: 2024/12/29 04:06:25 by zqouri           ###   ########.fr       */
+/*   Updated: 2025/01/18 05:52:39 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,29 +24,37 @@ void	render(void	*param)
 	// castAllRays(cube);
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-	t_cube cube;
+	// t_cube cube;
+	t_maap	*map;
 
-	cube.window = mlx_init(WIDTH, HEIGHT, "CUBE3D", false);
-	if (!cube.window)
-		ft_error("Error Creating Window\n");
+	(void)argv;
+	if (argc != 2)
+		return (ft_error("Error: Invalid Number of Arguments\n"), 1);
+	map = init_map(argv[1]);
+	pars(map);
+	//rendering
+	
+	// cube.window = mlx_init(WIDTH, HEIGHT, "CUBE3D", false);
+	// if (!cube.window)
+	// 	ft_error("Error Creating Window\n");
 
-	cube.img = mlx_new_image(cube.window, WIDTH, HEIGHT);
-	if (!cube.img)
-		ft_error("Error Allocating Img Buffer\n");
+	// cube.img = mlx_new_image(cube.window, WIDTH, HEIGHT);
+	// if (!cube.img)
+	// 	ft_error("Error Allocating Img Buffer\n");
 
-	allocations(&cube);
-	getMap(&cube);
-	initStartingValues(&cube);
+	// allocations(&cube);
+	// getMap(&cube);
+	// initStartingValues(&cube);
 
-	updatePosition(&cube);
-	render(&cube);
+	// updatePosition(&cube);
+	// render(&cube);
 
-	mlx_key_hook(cube.window, keyPress, &cube);	
-	mlx_image_to_window(cube.window, cube.img, 0, 0);
-	mlx_loop_hook(cube.window, render, &cube);
-	mlx_loop(cube.window);
+	// mlx_key_hook(cube.window, keyPress, &cube);	
+	// mlx_image_to_window(cube.window, cube.img, 0, 0);
+	// mlx_loop_hook(cube.window, render, &cube);
+	// mlx_loop(cube.window);
 
     return 0;
 }

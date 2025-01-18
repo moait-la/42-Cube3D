@@ -77,7 +77,7 @@ typedef struct s_cube
 }	t_cube;
 
 //MAPS
-typedef struct s_map
+typedef struct s_maap
 {
 	int		fd;
 	int		h_map;
@@ -86,6 +86,6 @@ typedef struct s_map
 	char	*line;
 	char	**map;
 
-}	t_map;
+}	t_maap;
 
 #endif

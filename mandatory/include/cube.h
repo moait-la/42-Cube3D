@@ -1,19 +1,22 @@
 #ifndef CUBE_H
 # define CUBE_H
 
-#include "macros.h"
-#include "struct.h"
-#include "../../MLX42/include/MLX42/MLX42.h"
-#include "../../MLX42/include/MLX42/MLX42.h"
-#include "../../libft/libft.h"
-#include <math.h>
-#include <sys/time.h>
-#include <stdio.h>
-#include <stdbool.h>
+# include "macros.h"
+# include "struct.h"
+# include "../../MLX42/include/MLX42/MLX42.h"
+# include "../../libft/libft.h"
+# include <math.h>
+# include <sys/time.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdbool.h>
 
 //PARS
-
-
+t_maap	*init_map(char *argv);
+void	check_file(t_maap *data);
+void	pars(t_maap *map);
+void	ft_free(char **tab);
 //RAYS
 void	ft_error(char *errorMsj);
 void	*ft_malloc(unsigned long size);

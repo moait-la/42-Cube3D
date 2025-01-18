@@ -6,13 +6,27 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 03:47:21 by zqouri            #+#    #+#             */
-/*   Updated: 2024/12/29 04:06:44 by zqouri           ###   ########.fr       */
+/*   Updated: 2025/01/18 05:54:06 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cube.h"
 
-void	check_extention(t_map *data)
+void	clear_map(char *error, t_maap *data)
+{
+	if (error)
+		ft_putstr_fd(error, 2);
+	if (data)
+	{
+		if (data->line)
+			free(data->line);
+		if (data->map)
+			ft_free(data->map);
+	}
+	exit(1);
+}
+
+void	check_extention(t_maap *data)
 {
 	int	i;
 
@@ -24,7 +38,7 @@ void	check_extention(t_map *data)
 		clear_map("ERROR: Invalid extention\n", data);
 }
 
-void	check_file(t_map *data)
+void	check_file(t_maap *data)
 {
 	data->fd = open(data->name_map, O_RDWR, 0666);
 	if (data->fd == -1)
