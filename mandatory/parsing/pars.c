@@ -6,7 +6,7 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 04:07:39 by zqouri            #+#    #+#             */
-/*   Updated: 2025/01/18 05:58:37 by zqouri           ###   ########.fr       */
+/*   Updated: 2025/01/18 06:31:51 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_maap	*init_map(char *argv)
 		ft_putstr_fd("ERROR malloc\n", 2);
 		exit(1);
 	}
-	data->name_map = ft_strdup(argv);
+	data->name_map = argv;
 	data->line = NULL;
 	data->map = NULL;
 	return (data);
@@ -31,4 +31,5 @@ t_maap	*init_map(char *argv)
 void	pars(t_maap *map)
 {
 	check_file(map);
+	// get_map(map);
 }

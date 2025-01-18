@@ -6,7 +6,7 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 03:47:21 by zqouri            #+#    #+#             */
-/*   Updated: 2025/01/18 05:54:06 by zqouri           ###   ########.fr       */
+/*   Updated: 2025/01/18 06:30:43 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	clear_map(char *error, t_maap *data)
 {
+	//the function is used to clear the map and print the error message
 	if (error)
 		ft_putstr_fd(error, 2);
 	if (data)
@@ -40,8 +41,8 @@ void	check_extention(t_maap *data)
 
 void	check_file(t_maap *data)
 {
-	data->fd = open(data->name_map, O_RDWR, 0666);
+	data->fd = open(data->name_map, O_RDONLY, 0666);
 	if (data->fd == -1)
-		clear_map("ERROR: NO such Directory or file\n", data);
+		ft_error("ERROR: NO such Directory or File\n");
 	check_extention(data);
 }

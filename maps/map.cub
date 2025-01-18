@@ -1,7 +1,7 @@
-NO assets/textures/n.png
-SO assets/textures/s.png
-WE assets/textures/w.png
-EA assets/textures/e.png
+NO ./textures/n.png
+SO ./textures/s.png
+WE ./textures/w.png
+EA ./textures/e.png
 
 F 0,0,0
 C 53,81,92

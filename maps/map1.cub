@@ -1,0 +1,8 @@
+NO ./textures/n.png
+SO ./textures/s.png
+WE ./textures/w.png
+EA ./textures/e.png
+
+F 1,1,1
+C 50,80,90
+
