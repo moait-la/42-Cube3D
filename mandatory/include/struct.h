@@ -76,7 +76,17 @@ typedef struct s_cube
     long        lastFameUpdate;
 }	t_cube;
 
-//MAPS
+//image
+
+typedef struct s_img
+{
+    unsigned int    *img;
+    unsigned int    height;
+    unsigned int    width;
+    char            *path;
+}   t_img;
+
+//MAAPS
 typedef struct s_maap
 {
 	int		fd;

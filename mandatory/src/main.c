@@ -6,7 +6,7 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 04:06:21 by zqouri            #+#    #+#             */
-/*   Updated: 2025/01/18 05:52:39 by zqouri           ###   ########.fr       */
+/*   Updated: 2025/01/19 01:35:07 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main(int argc, char *argv[])
 	// t_cube cube;
 	t_maap	*map;
 
-	(void)argv;
 	if (argc != 2)
 		return (ft_error("Error: Invalid Number of Arguments\n"), 1);
 	map = init_map(argv[1]);
