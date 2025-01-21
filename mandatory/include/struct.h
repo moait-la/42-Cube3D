@@ -22,15 +22,15 @@ typedef struct s_map
 
 typedef struct s_point
 {
-    float	x;
-    float	y;
+    double	x;
+    double	y;
 }	t_point;
 
 typedef struct s_player
 {
-    float       degree;
     float       x;
     float       y;
+    float       degree;
     int         speed;
 
     bool	moveForward;
@@ -43,6 +43,7 @@ typedef enum s_hit
 {
     VERTICAL,
     HORIZONTAL,
+    VALIDHIT,
     UNKNOWN
 }   t_hit;
 
@@ -52,8 +53,6 @@ typedef struct s_ray
     float   rayAngle;
     float   xInter; // Intersaction
     float   yInter;
-    bool	hitHori;
-    bool	hitVert;
 
     bool	facingUp;
     bool	facingDown;
@@ -64,6 +63,13 @@ typedef struct s_ray
     t_point	*vertiHitP;
 }   t_ray;
 
+typedef struct s_color
+{
+    int r;
+    int g;
+    int b;
+}   t_color;
+
 typedef struct s_cube
 {
     mlx_t       *window;
@@ -72,7 +78,6 @@ typedef struct s_cube
 	t_texture   *texture;
     t_player    *player;
     t_ray       *ray;
-    long        lastFameUpdate;
 }	t_cube;
 
 #endif

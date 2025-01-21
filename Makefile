@@ -1,5 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra 
+# CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+
 
 MLX42 = -L$(HOME)/my_libraries/MLX42/lib -lmlx42
 GLFW  = -L$(HOME)/.brew/Cellar/glfw/3.4/lib -lglfw
@@ -15,7 +16,7 @@ EXEC = cube
 all: $(EXEC)
 
 $(EXEC): $(OBJ) $(HEADERS)
-	$(CC) $(CFLAGS) $(OBJ) $(GLFW) $(MLX42) $(LIBFT) -o $@ 
+	$(CC) $(CFLAGS) $(OBJ) $(GLFW) $(MLX42) $(LIBFT)  -o $@ 
 
 clean:
 	rm -rf $(OBJ)

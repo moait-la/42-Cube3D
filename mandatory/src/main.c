@@ -1,15 +1,20 @@
 #include "../include/cube.h"
 
+void	clearImage(t_cube *cube)
+{
+	ft_memset(cube->img->pixels, 0, cube->img->width * cube->img->height * 4);
+}
+
 void	render(void	*param)
 {
 	t_cube	*cube;
 
 	cube = (t_cube *)param;
+	clearImage(cube);
 	updatePosition(cube);
-	renderMapGrid(cube);
-	renderPlayer(cube);
-	castRay(cube);
-	// castAllRays(cube);
+	castAllRays(cube);
+	// renderMapGrid(cube);
+	// renderPlayer(cube);
 }
 
 int main()
@@ -27,19 +32,13 @@ int main()
 	allocations(&cube);
 	getMap(&cube);
 	initStartingValues(&cube);
+	getSquareFactor(&cube);
 
-	updatePosition(&cube);
-	render(&cube);
-
-	mlx_key_hook(cube.window, keyPress, &cube);	
-	mlx_image_to_window(cube.window, cube.img, 0, 0);
+	mlx_key_hook(cube.window, keyPress, &cube);
 	mlx_loop_hook(cube.window, render, &cube);
+	mlx_image_to_window(cube.window, cube.img, 0, 0);
+
 	mlx_loop(cube.window);
 
     return 0;
 }
-
-/*
-WIDTH 1700
-HEIGHT 1000
-*/

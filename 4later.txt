@@ -1,0 +1,60 @@
+void	castRay(t_cube *cube)
+{
+	int endX = cube->player->x + 25 * cos(cube->player->degree * (PI/180));
+	int endY = cube->player->y + 25 * sin(cube->player->degree * (PI/180));
+
+	float deltaX = endX - cube->player->x;
+	float deltaY = endY - cube->player->y;
+
+	int steps;
+	if (fabsf(deltaX) > fabsf(deltaY))
+		steps = fabsf(deltaX);
+	else
+		steps = fabsf(deltaY);
+
+	float xInc = deltaX / steps;
+	float yInc = deltaY / steps;
+
+	float tmpx = cube->player->x;
+	float tmpy = cube->player->y;
+	int i = -1;
+	while (++i < steps)
+	{
+		myPixelPut(cube, tmpx, tmpy, 0xFF0000);
+		tmpx += xInc;
+		tmpy += yInc;
+	}
+}
+
+void	renderRay(t_cube *cube, int colom)
+{
+	int		endX;
+	int		endY;
+	float	deltaX;
+	float	deltaY;
+
+	if (cube->ray[colom].horizHitP->x <= 0 || cube->ray[colom].horizHitP->y <= 0)
+		return ;
+	endX = cube->ray[colom].horizHitP->x;
+	endY = cube->ray[colom].horizHitP->y;
+	deltaX = endX - cube->player->x;
+	deltaY = endY - cube->player->y;
+	int steps;
+	if (fabsf(deltaX) > fabsf(deltaY))
+		steps = fabsf(deltaX);
+	else
+		steps = fabsf(deltaY);
+
+	float xInc = deltaX / steps;
+	float yInc = deltaY / steps;
+
+	float tmpx = cube->player->x;
+	float tmpy = cube->player->y;
+	int i = -1;
+	while (++i < steps)
+	{
+		myPixelPut(cube, tmpx, tmpy, 0xFF0000);
+		tmpx += xInc;
+		tmpy += yInc;
+	}
+}
